@@ -7,31 +7,26 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Contacts= () => {
-    const [apiData, setApiData] = useState(false);
-    useEffect(()=> {
-        const fetchData = async() => {
-
-            try{
-                const apiUrl = process.env.REACT_APP_WEBSERVER_API_ROOT;
-                const response = await axios.get(apiUrl);
-
-                if (response.status === 200){
-                setApiData(response?.data?.blog_records);
-                
-                }
-
-            } catch (error){
-                console.log(error.response)
-            }
-        };
-        fetchData();
-        return ()=>{};
-
-
+const Test= () => {
+    const [songs, setSongs] = useState([]);
+    const apiUrl = process.env.REACT_APP_WEBSERVER_API_ROOT;
+    console.log(apiUrl);
+    useEffect(() => {
+      const fetchSongs = async () => {
+        try {
+            // const apiUrl = process.env.REACT_APP_WEBSERVER_API_ROOT;
+            const response = await axios.get(apiUrl+ "/songs");
+            setSongs(response?.data?.song_records);
+        } catch (error) {
+          console.error('Error fetching songs:', error);
+        }
+      };
+  
+      fetchSongs();
     }, []);
 
-    console.log(apiData);
+
+    console.log(songs);
 
 
     return (
@@ -44,4 +39,4 @@ const Contacts= () => {
     )
 }
 
-export default Contacts
+export default Test
