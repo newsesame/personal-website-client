@@ -25,7 +25,7 @@ const Test= () => {
       fetchSongs();
     }, []);
 
-
+    console.log(apiUrl);
     console.log(songs);
 
 
