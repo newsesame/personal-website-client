@@ -23,7 +23,7 @@ const Career = () => {
             <h2 style={{ flex: '1 1 100px' }}>CareerPart</h2>
         </div>
         <div className="Container">
-            <p>I would like become an Quant Developer
+            <p>I would like become an Quant Developer.
                 <br></br>
                 <br></br>
 

@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 import {Col, Container, Row, Image } from "react-bootstrap";
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Education from '../components/layout/Education';
 import selfie from '../image/selfie.jpg';
@@ -44,36 +43,49 @@ const techStack = {
         
     ],
 };
+
+
+
 // import Education from '../page/Education';
 const Root = () => {
-    // Extract the params in the url
-    const params = useParams()
-    // console.log(params)
-    // const [apiData, setApiData] = useState(false);
-    // useEffect(()=> {
-    //     const fetchData = async() => {
 
-    //         try{
-    //             const apiUrl = process.env.REACT_APP_WEBSERVER_API_ROOT + "/"+params.id;
-    //             const response = await axios.get(apiUrl);
+    
 
-    //             if (response.status === 200){
-    //             setApiData(response?.data?.record);
-                
-    //             }
-
-    //         } catch (error){
-    //             console.log(error.response)
-    //         }
-    //     };
-    //     fetchData();
-    //     return ()=>{};
-
-
-    // }, []);
-
-    // console.log(apiData);
-
+    // Typing Effect
+    const divRef = useRef(null);
+    const text = "(I guess I am really bad at Frontend development.... I feel so sorry if the design is unpleasant to you. -,-)";
+    let typingTimer = null; // 用來存儲計時器的引用
+    
+    function textTypingEffect(element, text, i = 0) {
+        if (i === 0) {
+            element.textContent = ""; // 清空之前的內容
+        }
+        
+        element.textContent += text[i]; // 逐字增加內容
+    
+        if (i < text.length - 1) {
+            typingTimer = setTimeout(() => textTypingEffect(element, text, i + 1), 70); // 設定下一個字符的定時器
+        }
+    }
+    
+    useEffect(() => {
+        if (divRef.current) {
+            // 如果之前有定時器，清除它
+            if (typingTimer) {
+                clearTimeout(typingTimer);
+            }
+    
+            textTypingEffect(divRef.current, text); // 開始打字效果
+        }
+    
+        // 清理函數：當組件卸載或重新渲染時清除定時器，防止重疊
+        return () => {
+            if (typingTimer) {
+                clearTimeout(typingTimer);
+            }
+        };
+    }, [text]);
+    
 
     return (
         <div fluid>
@@ -83,12 +95,27 @@ const Root = () => {
                 
                
                 {/* <h1 style={{ flex: '1 1 100px' }}>Welcome to My Personal Website</h1> */}
-
-
             </div>
+            
+            <div  className='Container' style={{justifyContent: 'center'}} >
+            
+            <p ref={divRef} style={{ fontSize: "17px" }}>
+            </p>
+            
+
+
+                 
+            </div>
+
+            
             <div  className='Container text-center space' >
-                <p style={{ flex: '1 1 100px' }}className='text-center'> (I am really bad at and not interested in Frontend.... I feel so sorry if the design is unpleasant to you. -,-
-                <br/>I just want to practice my backend and database skills. And the webserver is written in GoLang and the database is MongoDB.)
+
+                <p style={{ flex: '1 1 100px' }}className='text-center'> 
+                    
+    
+                This website is built around node.js, Go Lang and MongoDB.<br></br> I made this website in order to train my full stack skills. You may check out the source code on my github.
+                <br></br>
+                It showcases my education and projects. I will also share some personal things and ideas here. 🙂 
                 </p>
             </div>
 
@@ -101,14 +128,13 @@ const Root = () => {
                 <div className="items" style={{ flex: '3 1' }}>
                     <h2>About Me</h2>
                     <p>
-                        Hello. I am a Year 3 Computing Science student at the Chinese University of Hong Kong, with a minor in Statistics. Currently, I'm pursuing my minor in statistics and 
-                        working on various software development projects. 
+                        Hello. I am a Year 3 Computer Science student at the Chinese University of Hong Kong, with a minor in Statistics. Currently, I'm pursuing my minor in statistics and 
+                        working on various software development projects. In the rest of the time, I am an addicted TFT player. 👾👾
                         
-                        This website showcases my education, experience, and projects.
                     </p>
                     <Col className='no-padding'>
                         <Row className="d-flex align-items-center">
-                            <Col> Please visit my Project on Github:<a href="https://github.com/newsesame" target="_blank" rel="noopener noreferrer"><FaGithub size={50} /></a></Col>
+                            <Col> Please visit my Project on Github:<a href="https://github.com/newsesame" target="_blank" rel="noopener noreferrer"><FaGithub size={50} color="black"/></a></Col>
                   
                                 
                         </Row>
@@ -146,9 +172,10 @@ const Root = () => {
                 </div>
 
             </div>
+            
             <div style={{marginBottom: "0px",}} className='Container space'>
 
-            <h2>Education</h2>
+                <h2>Education</h2>
 
            
             </div>
