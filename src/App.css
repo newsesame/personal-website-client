@@ -198,7 +198,7 @@ label {
 	display: flex;
   /* display: flex; */
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 	/* align-items: center; */
 	flex-direction:column;
 	
@@ -259,6 +259,4 @@ li {
   width: 100%;
 }
 
-h3 {
-  margin: 0px;
-}
+

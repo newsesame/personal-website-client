@@ -1,33 +1,26 @@
 import React, { useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-
 import {Col, Container, Row, Image } from "react-bootstrap";
-import { Link } from 'react-router-dom';
-import Education from '../components/layout/Education';
 import selfie from '../image/selfie.jpg';
 import cuhkicon from '../image/cuhkicon.png';
+
+
 const categoryColors = {
-    "Language": "hsl(208,54%, 73%)",  // Node.js 綠色
-    // "Frontend": "#b2b2b2", // JavaScript 黃色
-    "Backend": "hsl(208,54%, 92%)",  // Node.js 綠色
-    "Database": "hsl(208,54%, 73%)",  // Node.js 綠色
-    "Others": "hsl(208,54%, 92%)",  // Node.js 綠色
-    // 其他類別和顏色...
+    "Language": "hsl(208,54%, 73%)", // Deep Blue
+    // "Frontend": "#b2b2b2", // 
+    "Backend": "hsl(208,54%, 92%)",  // Pale Blue
+    "Database": "hsl(208,54%, 73%)",
+    "Others": "hsl(208,54%, 92%)",  
+    
   };
 const techStack = {
+    // Images stored in public
     "Language": [
         { name: 'Python', image: 'Python.png', familiarity: "Medium" },
         { name: 'GO Lang', image: 'Golang.png',familiarity: "Medium" },
         { name: 'Java', image: 'Java.png',familiarity: "Medium" },
-
     ],
-    // "Frontend": [
-    //     { name: 'HTML5', image: 'path-to-image/html5.png',familiarity: "Medium" },
-    //     { name: 'CSS3', image: 'path-to-image/css3.png',familiarity: "Medium"},
-    //     { name: 'JavaScript', image: 'path-to-image/javascript.png',familiarity: "Medium" },
-    // ],
+
     "Backend": [
         { name: 'Node.js', image: 'nodejs.png', familiarity: "Medium" },
         { name: 'Golang', image: 'gofiber.png', familiarity: "Medium"},
@@ -45,40 +38,40 @@ const techStack = {
 };
 
 
-
-// import Education from '../page/Education';
 const Root = () => {
 
-    
 
     // Typing Effect
     const divRef = useRef(null);
     const text = "(I guess I am really bad at Frontend development.... I feel so sorry if the design is unpleasant to you. -,-)";
-    let typingTimer = null; // 用來存儲計時器的引用
+
+    let typingTimer = null; // Counter
     
     function textTypingEffect(element, text, i = 0) {
+        // Reset the content at the start
         if (i === 0) {
-            element.textContent = ""; // 清空之前的內容
+            element.textContent = "";
         }
         
-        element.textContent += text[i]; // 逐字增加內容
+        // add every wording everytime
+        element.textContent += text[i]; 
     
+        // End Condition
         if (i < text.length - 1) {
-            typingTimer = setTimeout(() => textTypingEffect(element, text, i + 1), 70); // 設定下一個字符的定時器
+            typingTimer = setTimeout(() => textTypingEffect(element, text, i + 1), 70);
         }
     }
     
     useEffect(() => {
         if (divRef.current) {
-            // 如果之前有定時器，清除它
+            // Make sure only one counter is working, for the stability 
             if (typingTimer) {
                 clearTimeout(typingTimer);
             }
     
-            textTypingEffect(divRef.current, text); // 開始打字效果
+            textTypingEffect(divRef.current, text); 
         }
     
-        // 清理函數：當組件卸載或重新渲染時清除定時器，防止重疊
         return () => {
             if (typingTimer) {
                 clearTimeout(typingTimer);
@@ -141,7 +134,7 @@ const Root = () => {
                         <Row className="d-flex align-items-center">
                             
     
-                            <Col>Also, Feel free to connect me via linkedin:<a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer"><FaLinkedin size={50} style={{ marginRight: '10px' }} /></a></Col>
+                            <Col>Also, Feel free to connect me via linkedin:<a href="https://www.linkedin.com/in/josh-chau/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={50} style={{ marginRight: '10px' }} /></a></Col>
                                 
                     
                     

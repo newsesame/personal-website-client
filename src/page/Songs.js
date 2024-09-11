@@ -46,12 +46,13 @@ const Root = () => {
                 <hr></hr>
     
                 {songs.map((group, index) => {
-                    // 渲染年份时检查是否与前一个年份相同
+                    
                     const shouldRenderYear = index === 0 || group.year !== songs[index - 1].year;
-    
+
+                    // Every Year
                     return (
                         <div key={index}>
-                            {/* 仅在条件满足时渲染年份 */}
+                            
                             {shouldRenderYear && <h2>{group.year}</h2>}
                             <div
                                 style={{
@@ -59,20 +60,48 @@ const Root = () => {
                                     // borderColor: "#343a40",
                                     // color: "#343a40",
                                     padding: "0 px",
-                                    width:"35px"}}>
-                            <button
-                                className="accordion-button"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target={`#collapse-${index}`}
-                                aria-expanded="true"
-                                aria-controls={`#collapse-${index}`}
-                                style={{backgroundColor: "#DCDCDC", marginBottom: "5px",  display: "inline-block"}}>
-                                
-                                <h3 style={{ margin: "0px",  display: "inline-block" }}>
-                                    {group.month}
-                                </h3>
-                            </button>
+                                    width:"360px"}}>
+
+<button
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target={`#collapse-${index}`}
+    aria-expanded="true"
+    aria-controls={`#collapse-${index}`}
+    style={{
+    
+    backgroundColor: "hsl(208, 54%, 73%)", 
+    color: "white",
+
+    margin: "10px 0px",
+    display: "inline-block",
+    border: "none",
+    padding: "2px 10px",
+    borderRadius: "8px",
+    outline: "none",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    transition: "background-color 0.3s ease, box-shadow 0.3s ease",
+    cursor: "pointer",           // 鼠標懸停時變為指針
+  }}
+  onMouseEnter={(e) => {
+    const p = e.target.querySelector('p');
+    if (p) {
+      e.target.style.backgroundColor = "hsl(208, 54%, 92%)"; // 鼠標懸停時變色
+      p.style.backgroundColor = "hsl(208, 54%, 92%)"; // 同步 p 背景顏色
+    }
+  }}
+  onMouseLeave={(e) => {
+    const p = e.target.querySelector('p');
+    if (p) {
+      e.target.style.backgroundColor = "hsl(208, 54%, 73%)"; // 鼠標移開時恢復
+      p.style.backgroundColor = "transparent"; // 恢復 p 背景顏色
+    }
+  }}
+>
+  <p style={{ fontSize: "20px", outline: "none" , transition: "background-color 0.3s ease, box-shadow 0.3s ease",}}  className="no-margin no-padding">
+    {group.month}
+  </p>
+</button>
                             </div>
                             <div
                                 id={`collapse-${index}`}
@@ -105,40 +134,34 @@ const Root = () => {
                                                     <Row>{song.composer}</Row>
                                                 </Col>
                                                 <Col md={2} className="d-flex flex-column justify-content-center">
-                                                    <a href={song.song_url} target="_blank" rel="noopener noreferrer"><button>kkbox</button></a>
+                                                <a href={song.song_url} target="_blank" rel="noopener noreferrer">
+                                                    <button
+                                                        style={{
+                                                        backgroundColor: "hsl(208,54%, 73%)",  // 綠色背景
+                                                        color: "white",              // 白色字體
+                                                        padding: "10px 20px",        // 增加內邊距
+                                                        border: "none",              // 移除邊框
+                                                        borderRadius: "8px",         // 圓角
+                                                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // 添加陰影
+                                                        cursor: "pointer",           // 鼠標懸停時變為指針
+                                                        transition: "background-color 1.0s ease", // 過渡效果
+                                                        }}
+                                                        onMouseEnter={(e) => {
+                                                        e.target.style.backgroundColor = "hsl(208,54%, 92%)"; // 鼠標懸停時變色
+                                                        }}
+                                                        onMouseLeave={(e) => {
+                                                        e.target.style.backgroundColor = "hsl(208,54%, 73%)"; // 鼠標移開時恢復
+                                                        }}
+                                                    >
+                                                        KKBOX
+                                                    </button>
+                                                    </a>
                                                 </Col>
                                             </Row>
                                         {/* </div> */}
                                     </li>
                                 ))}                                    
-                                    {/* {group.songs.map((song) => (
-                                        <li key={song.song_id}>
-                                            <div className='Container d no-margin'>
-                                                
-                                                
-                                                <Row>
-                                                    <Col md={3} className='cover p-0'>
-                                                        <div className='cover'>
-                                                            <img src={"http://localhost:8080/cover/" + song.cover_image} alt="song cover"/>
-                                                        </div>
-                                                    </Col>
-                                                    <Col md={4} className="d-flex flex-column justify-content-center p-0">
-                                                        
-                                                        <Row><h4 className="p-0">{song.title}</h4></Row>
-                                                        <Row>{song.artist}</Row>
-                                                        <Row>{song.album}</Row>
-                                                    </Col>
-                                                    <Col md={3} className="d-flex flex-column justify-content-center p-0">
-                                                        <Row>{song.lyricst ? song.lyricst : "Unknown"}</Row>
-                                                        <Row>{song.composer ? song.composer : "Unknown"}</Row>
-                                                    </Col>
-                                                    <Col md={2} className="d-flex flex-column justify-content-center p-0">
-                                                        <a href={song.song_url} target="_blank" rel="noopener noreferrer"><button>kkbox</button></a>
-                                                    </Col>
-                                                </Row>
-                                            </div>
-                                        </li>
-                                    ))} */}
+
                                 </ul>
                                 </div>
                             </div>
