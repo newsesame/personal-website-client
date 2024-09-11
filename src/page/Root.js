@@ -122,7 +122,7 @@ const Root = () => {
                     <h2>About Me</h2>
                     <p>
                         Hello. I am a Year 3 Computer Science student at the Chinese University of Hong Kong, with a minor in Statistics. Currently, I'm pursuing my minor in statistics and 
-                        working on various software development projects. In the rest of the time, I am an addicted TFT player. 👾👾
+                        working on various software development projects.
                         
                     </p>
                     <Col className='no-padding'>
