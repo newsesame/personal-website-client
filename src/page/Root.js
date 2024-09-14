@@ -87,8 +87,8 @@ const Root = () => {
         <>
         <Helmet>
         <title>Josh Chau</title>
-        <meta name="description" content="Home page of Josh Chau personal website." />
-      </Helmet>
+        <meta name="description" content="Josh Chau personal website home page." />
+        </Helmet>
         <div fluid>
 
             <div  className='Container text-center'>
