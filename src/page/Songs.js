@@ -1,9 +1,8 @@
-import React from 'react'
-import { useParams } from 'react-router-dom';
+import React from 'react';
 import axios from 'axios';
 
 
-import {Col, Container, Row, Image } from "react-bootstrap";
+import {Col, Row} from "react-bootstrap";
 import { useEffect, useState } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -33,7 +32,7 @@ const Root = () => {
       };
   
       fetchSongs();
-    }, []);
+    }, [apiUrl]);
 
     console.log(songs);
 

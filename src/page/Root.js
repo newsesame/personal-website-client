@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import {Col, Container, Row, Image } from "react-bootstrap";
+import {Col, Row, Image } from "react-bootstrap";
 import selfie from '../image/selfie.jpg';
+import { Helmet } from 'react-helmet-async';
 import cuhkicon from '../image/cuhkicon.png';
 
 
@@ -41,9 +42,7 @@ const techStack = {
 
 
 const Root = () => {
-    useEffect(() => {
-		document.title = "Josh Chau"
-	}, []);
+
 
     // Typing Effect
     const divRef = useRef(null);
@@ -81,10 +80,15 @@ const Root = () => {
                 clearTimeout(typingTimer);
             }
         };
-    }, [text]);
+    }, [text,textTypingEffect, typingTimer]);
     
 
     return (
+        <>
+        <Helmet>
+        <title>Josh Chau</title>
+        <meta name="description" content="Home page of Josh Chau personal website." />
+      </Helmet>
         <div fluid>
 
             <div  className='Container text-center'>
@@ -230,6 +234,7 @@ const Root = () => {
             </div>
 
         </div>
+        </>
     )
 }
 

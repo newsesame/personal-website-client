@@ -2,9 +2,8 @@ import axios from 'axios';
 import React from 'react';
 
 
-import {Col, Container, Row, } from "react-bootstrap";
+import {Container, Row, } from "react-bootstrap";
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 
 const Test= () => {
@@ -28,7 +27,7 @@ const Test= () => {
       };
   
       fetchSongs();
-    }, []);
+    }, [apiUrl]);
     console.log(test);
     console.log(apiUrl);
     console.log(songs);

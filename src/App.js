@@ -4,6 +4,7 @@ import './App.css';
 import './Large.css';
 import {Routes, Route} from "react-router-dom";
 import Header from "./components/layout/Header";
+import { HelmetProvider } from 'react-helmet-async';
 
 import Root from './page/Root';
 import Test from './page/Test';
@@ -11,13 +12,14 @@ import Songs from "./page/Songs";
 import Career from "./components/Career";
 
 import { Col, Row } from 'react-bootstrap';
-import { useEffect } from 'react';
+
 
 
 
 function App() {
 
   return (
+	<HelmetProvider>
     <>
 		
 		<div style={{ paddingTop: '70px' }}></div>
@@ -41,6 +43,7 @@ function App() {
 
 		</Routes>
     </>
+	</HelmetProvider>
   );
 }
 

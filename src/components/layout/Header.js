@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row, Navbar, Nav } from "react-bootstrap";
+import {  Container, Navbar, Nav } from "react-bootstrap";
 import { FaLinkedin} from 'react-icons/fa';
 
 
