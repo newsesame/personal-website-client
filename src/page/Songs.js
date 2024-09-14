@@ -41,8 +41,8 @@ const Root = () => {
     return (
         <>
             <div className='Container-h'>
-                <h2>My Play List</h2>
-                <p className="no-margin">All song information is captured by the Python + Selenium web scraper script and stored in my MongoDB.</p>
+                <h2>My Playlist</h2>
+                <p className="no-margin">All song information is captured by the Python + Selenium web scraper script and stored in the MongoDB.</p>
                 <hr></hr>
     
                 {songs.map((group, index) => {
@@ -61,53 +61,23 @@ const Root = () => {
                                     // color: "#343a40",
                                     padding: "0 px",
                                     width:"360px"}}>
-
 <button
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target={`#collapse-${index}`}
-    aria-expanded="true"
-    aria-controls={`#collapse-${index}`}
-    style={{
-    
-    backgroundColor: "hsl(208, 54%, 73%)", 
-    color: "white",
-
-    margin: "10px 0px",
-    display: "inline-block",
-    border: "none",
-    padding: "2px 10px",
-    borderRadius: "8px",
-    outline: "none",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    transition: "background-color 0.3s ease, box-shadow 0.3s ease",
-    cursor: "pointer",           // 鼠標懸停時變為指針
-  }}
-  onMouseEnter={(e) => {
-    const p = e.target.querySelector('p');
-    if (p) {
-      e.target.style.backgroundColor = "hsl(208, 54%, 92%)"; // 鼠標懸停時變色
-      p.style.backgroundColor = "hsl(208, 54%, 92%)"; // 同步 p 背景顏色
-    }
-  }}
-  onMouseLeave={(e) => {
-    const p = e.target.querySelector('p');
-    if (p) {
-      e.target.style.backgroundColor = "hsl(208, 54%, 73%)"; // 鼠標移開時恢復
-      p.style.backgroundColor = "transparent"; // 恢復 p 背景顏色
-    }
-  }}
+  type="button"
+  data-bs-toggle="collapse"
+  data-bs-target={`#collapse-${index}`}
+  aria-expanded="true"
+  aria-controls={`#collapse-${index}`}
+  className="styled-button"
 >
-  <p style={{ fontSize: "20px", outline: "none" , transition: "background-color 0.3s ease, box-shadow 0.3s ease",}}  className="no-margin no-padding">
-    {group.month}
-  </p>
+  <p className="button-text">{group.month}</p>
 </button>
+
                             </div>
                             <div
                                 id={`collapse-${index}`}
                                 className="accordion-collapse collapse show"
                                 data-bs-parent="#accordionExample">
-                                <p>** ⬆️⬆️ Click the month number above to expand/collapse the playlist!</p>
+                                <p> ⬆️⬆️ Click the month number above to expand/collapse the playlist!</p>
                                 <div style={{ border: '1px solid black', padding: "20px" }}>
                                 <p>List: </p>
 

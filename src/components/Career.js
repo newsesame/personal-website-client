@@ -19,17 +19,27 @@ const Career = () => {
     return (
         
         <>
-        <div className='Container space'>
-            <h2 style={{ flex: '1 1 100px' }}>CareerPart</h2>
+        <div className='Container space' style={{marginBottom:"0px"}}>
+            <h2 style={{ flex: '1 1 100px' }}>Career<hr></hr></h2>
+                
         </div>
+        
         <div className="Container">
-            <p>I would like become an Quant Developer.
+            <p>I would like to become an Quant Developer.
                 <br></br>
                 <br></br>
+            "In the whole branch of computer science, programming is not even 10." This is one of the things that my professor said that impressed me a lot.
+            I've always believed that as a computer science undergraduate, my value is not in the fact that I can just call different libraries/technology piles. I also don't want this to be my career for the next few decades, even though I understand that we are required to be familiar with a lot of applications on the job. 
+            <br></br>
+            <br></br>
+            But when I ask myself what I know in theory, I realise I don't know much lol... I have been thinking about what advantages I have over university students majoring in other disciplines.
+            Algorithm? Data Structure? Automata Theory? And what are my advantages over other computer science students?
 
-            "Programming is not 10% enough in the whole branch of computer science."" This is one of the things my professor said that impressed me a lot.  
-            I have always believed that as a computer science undergraduate, my value does not lie in the fact that I only call different library/tech stacks. I also do not want this to be my career for the next few decades, although I do know that we need to know a lot of application knowledge in the workplace.  
-            
+            <br></br>
+            <br></br>
+            Therefore, I started on the path of pursuing a minor in Statistics. Looking forward to one day I can combine my knowledge of computers and statistics to create something great, but not just by importing models from Keras/ Tensorflow and fitting them into data. 🥲
+            <br></br>
+            <br></br>
             </p>
         </div>
             

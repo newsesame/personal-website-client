@@ -260,3 +260,32 @@ li {
 }
 
 
+.styled-button {
+  background-color: hsl(208, 54%, 73%);
+  color: white;
+  margin: 10px 0px;
+  display: inline-block;
+  border: none;
+  padding: 2px 10px;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-text {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.styled-button:hover {
+  background-color: hsl(208, 54%, 92%);
+}
+
+.styled-button:hover .button-text {
+  background-color: hsl(208, 54%, 92%);
+}

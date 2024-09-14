@@ -134,7 +134,7 @@ const Root = () => {
                         <Row className="d-flex align-items-center">
                             
     
-                            <Col>Also, Feel free to connect me via linkedin:<a href="https://www.linkedin.com/in/josh-chau/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={50} style={{ marginRight: '10px' }} /></a></Col>
+                            <Col>Also, feel free to connect me via linkedin:<a href="https://www.linkedin.com/in/josh-chau/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={50} style={{ marginRight: '10px' }} /></a></Col>
                                 
                     
                     
@@ -219,9 +219,7 @@ const Root = () => {
                             <Row>
                                 <p style={{marginBottom: "0px",}}>{tech.name}</p>
                             </Row>
-                            <Row>
-                                <p>({tech.familiarity})</p>
-                            </Row>
+                        
                         </Col>
                     ))}
                 </Row>
