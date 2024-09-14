@@ -129,7 +129,7 @@ label {
 
 
 .hover-grey-section:hover {
-  background-color: #f0f0f0; /* 鼠标悬停时背景变为灰色 */
+  background-color: #f0f0f0; 
 }
 
 .custom-navbar {
@@ -156,14 +156,10 @@ label {
 }
 
 .Container{
-	width: 900px;
-	margin: 0 auto;
-	display: flex;
-	
-	align-items: center;
-	
-
-
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .Containe-{

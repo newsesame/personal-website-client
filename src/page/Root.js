@@ -12,7 +12,9 @@ const categoryColors = {
     "Database": "hsl(208,54%, 73%)",
     "Others": "hsl(208,54%, 92%)",  
     
-  };
+};
+
+
 const techStack = {
     // Images stored in public
     "Language": [
@@ -83,29 +85,19 @@ const Root = () => {
     return (
         <div fluid>
 
-            <div  className='Container text-center' >
+            <div  className='Container text-center'>
                 <h1 style={{ flex: '1 1 100px' }}>Welcome to My Personal Website</h1>
-                
-               
-                {/* <h1 style={{ flex: '1 1 100px' }}>Welcome to My Personal Website</h1> */}
             </div>
             
             <div  className='Container' style={{justifyContent: 'center'}} >
-            
-            <p ref={divRef} style={{ fontSize: "17px" }}>
-            </p>
-            
-
-
-                 
+                <p ref={divRef} style={{ fontSize: "17px" }}>
+                </p>
             </div>
 
             
             <div  className='Container text-center space' >
 
                 <p style={{ flex: '1 1 100px' }}className='text-center'> 
-                    
-    
                 This website is built around node.js, Go Lang and MongoDB.<br></br> I made this website in order to train my full stack skills. You may check out the source code on my github.
                 <br></br>
                 It showcases my education and projects. I will also share some personal things and ideas here. 🙂 
@@ -126,35 +118,31 @@ const Root = () => {
                         
                     </p>
                     <Col className='no-padding'>
-                        <Row className="d-flex align-items-center">
+
+                        <Row className="align-items-center">
                             <Col> Please visit my Project on Github:<a href="https://github.com/newsesame" target="_blank" rel="noopener noreferrer"><FaGithub size={50} color="black"/></a></Col>
                   
                                 
                         </Row>
-                        <Row className="d-flex align-items-center">
-                            
-    
+
+                        <Row className="align-items-center">
+                    
                             <Col>Also, feel free to connect me via linkedin:<a href="https://www.linkedin.com/in/josh-chau/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={50} style={{ marginRight: '10px' }} /></a></Col>
-                                
-                    
-                    
-                            
-                        
+        
                         </Row>
-                        <Row className="d-flex align-items-center">
+
+                        <Row className="align-items-center">
                             <Col>
                                 I do Leetcode sometimes as well! 
                                 <a href="https://leetcode.com/u/newsesame/" target="_blank" rel="noopener noreferrer">
                                 <Image  style={{ 
-                                        // backgroundColor: "#fff",  // 設置白色背景
-                                        // borderRadius: "50%",       // 圓形背景
-                                        // padding: "10px",           // 添加內邊距使圖標四周有空白
-                                        // boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" ,// 添加陰影
+
                                         marginTop:"7.5px",
                                         marginBottom:"7.5px"
                                         
                                     }} src="Leetcode.png" alt="photo"   height="35px" roundedCircle/>
-                                </a></Col>
+                                </a>
+                            </Col>
                   
                                 
                         </Row>
@@ -170,10 +158,12 @@ const Root = () => {
 
                 <h2>Education</h2>
 
-           
             </div>
+
+
             <div className='Container space'>
                 <div style={{ flex: '1 1' }}><Image height="" src={cuhkicon} rounded className='shadow cuhkicon'/></div>
+
                 <div style={{ flex: '5 1', paddingLeft: "40px" }} >
                     <h3 >B.Sc. in Computer Science <br></br>Minor in Statistics</h3>
                     <p>The Chinese University of Hong Kong<br></br>Sept 2022 to Present</p>
@@ -182,114 +172,61 @@ const Root = () => {
 
            
             <div style={{marginBottom: "0px",}} className='Container space'>
-            <h2>Tech Stack</h2>
+                <h2>Tech Stack</h2>
             </div>
+
+
             <div className='Container'>
 
                 <Col>
-                {Object.keys(techStack).map((category, index) => (
-                
-                <Row 
-                    key={index}                            
-                    style={{ 
-                    backgroundColor: categoryColors[category],
-                    borderRadius: "15px", // 圓角效果,
-                    marginBottom: "10px",
-                    padding: "15px"
-                }}>
-                    <Col md="3">
-                    <h3 style={{marginBottom: "0px",}}>{category}</h3>
-                    <p>(Familiarity)</p>
-                    </Col>
-                    {techStack[category].map((tech, idx) => (
-
-                        <Col 
-                            key={idx} 
-                            className="d-flex flex-column align-items-center" >
-                            <Row>
-                                <Image  style={{ 
-        backgroundColor: "#fff",  // 設置白色背景
-        borderRadius: "50%",       // 圓形背景
-        padding: "10px",           // 添加內邊距使圖標四周有空白
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" ,// 添加陰影
-        marginBottom:"5px"
-        
-      }} className="shadow" src={tech.image} alt={tech.name}   height="60px" />
-                            </Row>
-                            <Row>
-                                <p style={{marginBottom: "0px",}}>{tech.name}</p>
-                            </Row>
-                        
-                        </Col>
-                    ))}
-                </Row>
+                    {Object.keys(techStack).map((category, index) => (
                     
-                ))}
-                </Col>
-                
-            </div>
+                    <Row 
+                        key={index}                            
+                        style={{ 
+                        backgroundColor: categoryColors[category],
+                        borderRadius: "15px", // 圓角效果,
+                        marginBottom: "10px",
+                        padding: "15px"
+                        }}>
 
-
-            {/* <div style={{marginBottom: "0px",}} className='Container'>
-
-                <h2>About This Project</h2>
-            </div>
-            <div style={{marginBottom: "0px",}} className='Container'>
-                <p>qweqweqeqweqweq</p>
-            </div>
-            <img src={process.env.REACT_APP_WEBSERVER_API_ROOT+"cover/66ba8dc39357a6a189f9f26c"} alt="Image"/>
-            <Row>
-                <Col md={6} className="mx-auto">
-
-                    <Row className="">
-                        <Col md="3" className="text-center">
-                            <Image height="100" src={selfie} roundedCircle fluid />
+                        {/* Title Column */}
+                        <Col md="3">
+                        <h3 style={{marginBottom: "0px",}}>{category}</h3>
+                        <p>(Familiarity)</p>
                         </Col>
-                        <Col md="9" className="d-flex align-items-center">
-                            <div>
-                                <h2>About Me</h2>
-                                <p>
-                                    Hi, I'm Josh Chau. I'm Currently a year 3 computer science student, with a passion for 
-                                    software development and data analytics skills. Currently, I'm pursuing my minor in statistics and 
-                                    working on various software development projects. This website showcases my 
-                                    education, experience, and projects.
-                                </p>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row className="mt-5">
-                        <Col md="6" xs="12">
-                            <h2>Education</h2>
-                            
-                        </Col>
-                    </Row>
-                    <Row className='hover-grey-section text-center'>
 
-                            <Col md="3" className="text-center">
-                                <Image height="10px" src={cuhkicon} rounded/>
+                        {/* Element Columns */}
+                        {techStack[category].map((tech, idx) => (
+                            <Col 
+                                key={idx} 
+                                className="d-flex flex-column align-items-center" >
+                                <Row>
+                                    <Image  style={{ 
+                                        backgroundColor: "#fff", 
+                                        borderRadius: "50%", // Rounded Color  
+                                        padding: "10px",           
+                                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" , // Fading
+                                        marginBottom:"5px"
+                                        
+                                        }} 
+                                        className="shadow" src={tech.image} alt={tech.name}   height="60px" />
+                                </Row>
+                                
+                                <Row>
+                                    <p style={{marginBottom: "0px",}}>{tech.name}</p>
+                                </Row>
                             </Col>
-                            
-                            <Col md="3" className="d-flex align-items-center text-center" fluid>
-                                <p>Bachelor of Science in Computer Science"</p>
+                        ))}
 
-                            </Col>
+
+                    </Row>
                         
-                
-                    </Row>
+                    ))}
                 </Col>
-            </Row>
-            <Row>
-                <h1>                qweqwdqnfnqeqwdqwdqwdqwdqw</h1>
-                <h1>                qweqwdqnfnqeqwdqwdqwdqwdqw</h1>
-                <h1>                qweqwdqnfnqeqwdqwdqwdqwdqw</h1>
-                <h1>                qweqwdqnfnqeqwdqwdqwdqwdqw</h1>
-                <h1>                qweqwdqnfnqeqwdqwdqwdqwdqw</h1>
-                <h1>                qweqwdqnfnqeqwdqwdqwdqwdqw</h1>
-                <h1>                qweqwdqnfnqeqwdqwdqwdqwdqw</h1>
-                <h1>                qweqwdqnfnqeqwdqwdqwdqwdqw</h1>
-                <h1>                qweqwdqnfnqeqwdqwdqwdqwdqw</h1>
+                
+            </div>
 
-            </Row> */}
         </div>
     )
 }

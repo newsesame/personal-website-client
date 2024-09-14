@@ -5,31 +5,27 @@ import axios from 'axios';
 
 import {Col, Container, Row, Image } from "react-bootstrap";
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Education from '../components/layout/Education';
-import selfie from '../image/selfie.jpg';
-import cuhkicon from '../image/cuhkicon.png';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Import Bootstrap JS (如果需要使用 Bootstrap 的 JavaScript 組件)
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+
 
 
 // import Education from '../page/Education';
 const Root = () => {
 
-
+    // Get the song data
     const [songs, setSongs] = useState([]);
     const apiUrl = process.env.REACT_APP_WEBSERVER_API_ROOT;
     console.log(apiUrl);
     useEffect(() => {
       const fetchSongs = async () => {
         try {
-            // const apiUrl = process.env.REACT_APP_WEBSERVER_API_ROOT;
             const response = await axios.get(apiUrl+ "/songs");
             setSongs(response?.data?.song_records);
         } catch (error) {
-          console.error('Error fetching songs:', error);
+            console.error('Error fetching songs:', error);
         }
       };
   
@@ -61,16 +57,16 @@ const Root = () => {
                                     // color: "#343a40",
                                     padding: "0 px",
                                     width:"360px"}}>
-<button
-  type="button"
-  data-bs-toggle="collapse"
-  data-bs-target={`#collapse-${index}`}
-  aria-expanded="true"
-  aria-controls={`#collapse-${index}`}
-  className="styled-button"
->
-  <p className="button-text">{group.month}</p>
-</button>
+                                <button
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target={`#collapse-${index}`}
+                                aria-expanded="true"
+                                aria-controls={`#collapse-${index}`}
+                                className="styled-button"
+                                >
+                                <p className="button-text">{group.month}</p>
+                                </button>
 
                             </div>
                             <div
@@ -107,20 +103,20 @@ const Root = () => {
                                                 <a href={song.song_url} target="_blank" rel="noopener noreferrer">
                                                     <button
                                                         style={{
-                                                        backgroundColor: "hsl(208,54%, 73%)",  // 綠色背景
-                                                        color: "white",              // 白色字體
-                                                        padding: "10px 20px",        // 增加內邊距
-                                                        border: "none",              // 移除邊框
-                                                        borderRadius: "8px",         // 圓角
-                                                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // 添加陰影
-                                                        cursor: "pointer",           // 鼠標懸停時變為指針
-                                                        transition: "background-color 1.0s ease", // 過渡效果
+                                                        backgroundColor: "hsl(208,54%, 73%)",  
+                                                        color: "white",              
+                                                        padding: "5px 10px",        
+                                                        border: "none",              
+                                                        borderRadius: "8px",         
+                                                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", 
+                                                        cursor: "pointer",           
+                                                        transition: "background-color 1.0s ease", 
                                                         }}
                                                         onMouseEnter={(e) => {
-                                                        e.target.style.backgroundColor = "hsl(208,54%, 92%)"; // 鼠標懸停時變色
+                                                        e.target.style.backgroundColor = "hsl(208,54%, 92%)"; 
                                                         }}
                                                         onMouseLeave={(e) => {
-                                                        e.target.style.backgroundColor = "hsl(208,54%, 73%)"; // 鼠標移開時恢復
+                                                        e.target.style.backgroundColor = "hsl(208,54%, 73%)"; 
                                                         }}
                                                     >
                                                         KKBOX
@@ -142,51 +138,6 @@ const Root = () => {
         </>
     );
     
-
-
-
-
-    // // Extract the params in the url
-    // const groupedSongs = {
-    //     "2024": {
-    //       "01": [
-    //         { song_id: "1", title: "Song A", artist: "Artist A", added_date: "2024-01" },
-    //         { song_id: "2", title: "Song B", artist: "Artist B", added_date: "2024-01" }
-    //       ],
-    //       "02": [
-    //         { song_id: "3", title: "Song C", artist: "Artist C", added_date: "2024-02" }
-    //       ]
-    //     },
-    //     "2023": {
-    //         "12": [
-    //         { song_id: "4", title: "Song D", artist: "Artist D", added_date: "2023-12" }
-    //         ]
-    //     }
-    // };
-
-
-    // // console.log(apiData);
-
-
-    // return (
-    //     Object.keys(groupedSongs).map(year => (
-    //         <div key={year} className='Container-h'>
-                
-    //         <h2>{year}</h2>
-    //         {Object.keys(groupedSongs[year]).map(month => (
-    //             <div key={month}>
-    //             <h3>{month}</h3>
-    //             <ul className='d-flex flex-column'>
-    //                 {groupedSongs[year][month].map(song => (
-    //                 <li key={song.song_id}>{song.title} by {song.artist}</li>
-    //                 ))}
-    //             </ul>
-    //             </div>
-    //         ))}
-    //         </div>
-    //     ))
-        
-    // );
 }
 
 export default Root
