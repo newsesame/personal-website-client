@@ -96,7 +96,7 @@ const Root = () => {
                                                     </div>
                                                 </Col>
                                                 <Col md={3} className="d-flex flex-column justify-content-center">
-                                                <Row dangerouslySetInnerHTML={{ __html: song.lyricst ? song.lyricst.replace(/\n/g, '<br>') : "Unknown" }} />
+                                                <Row dangerouslySetInnerHTML={{ __html: song.lyricist ? song.lyricist.replace(/\n/g, '<br>') : "Unknown" }} />
                                                     <Row>{song.composer}</Row>
                                                 </Col>
                                                 <Col md={2} className="d-flex flex-column justify-content-center">
