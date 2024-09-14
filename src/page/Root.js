@@ -41,7 +41,9 @@ const techStack = {
 
 
 const Root = () => {
-
+    useEffect(() => {
+		document.title = "Josh Chau"
+	}, []);
 
     // Typing Effect
     const divRef = useRef(null);

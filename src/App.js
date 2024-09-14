@@ -11,11 +11,12 @@ import Songs from "./page/Songs";
 import Career from "./components/Career";
 
 import { Col, Row } from 'react-bootstrap';
+import { useEffect } from 'react';
 
 
 
 function App() {
-  
+
   return (
     <>
 		

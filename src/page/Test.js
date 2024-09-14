@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom';
 
 
 const Test= () => {
+
+  useEffect(() => {
+		document.title = "Test"
+	}, []);
     const [songs, setSongs] = useState([]);
     const test = 5;
     const apiUrl = process.env.REACT_APP_WEBSERVER_API_ROOT;

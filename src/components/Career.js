@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Career = () => {
 
+    useEffect(() => {
+		document.title = "Career — Josh Chau"
+	}, []);
 
 
     return (

@@ -15,6 +15,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Education from '../page/Education';
 const Root = () => {
 
+    useEffect(() => {
+		document.title = "Playlist — Josh Chau"
+	}, []);
     // Get the song data
     const [songs, setSongs] = useState([]);
     const apiUrl = process.env.REACT_APP_WEBSERVER_API_ROOT;
