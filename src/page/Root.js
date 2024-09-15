@@ -211,13 +211,13 @@ const Root = () => {
                                     <Image  
                                         style={{ 
                                             backgroundColor: "#fff", 
-                                            borderRadius: "50%", // 圓形邊框
+                                            borderRadius: "50%", 
                                             padding: "15px",           
-                                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // 陰影
+                                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", 
                                             marginBottom: "5px",
-                                            width: "90px",  // 固定寬度
-                                            height: "90px", // 固定高度
-                                            objectFit: "cover" // 保持圖片比例，不會拉伸
+                                            width: "90px",  
+                                            height: "90px", 
+                                            objectFit: "cover" 
                                         }} 
                                         className="shadow" 
                                         src={tech.image} 
