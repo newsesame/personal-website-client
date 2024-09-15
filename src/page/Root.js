@@ -208,19 +208,25 @@ const Root = () => {
                                 key={idx} 
                                 className="d-flex flex-column align-items-center" >
                                 <Row>
-                                    <Image  style={{ 
-                                        backgroundColor: "#fff", 
-                                        borderRadius: "50%", // Rounded Color  
-                                        padding: "10px",           
-                                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" , // Fading
-                                        marginBottom:"5px"
-                                        
+                                    <Image  
+                                        style={{ 
+                                            backgroundColor: "#fff", 
+                                            borderRadius: "50%", // 圓形邊框
+                                            padding: "15px",           
+                                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // 陰影
+                                            marginBottom: "5px",
+                                            width: "90px",  // 固定寬度
+                                            height: "90px", // 固定高度
+                                            objectFit: "cover" // 保持圖片比例，不會拉伸
                                         }} 
-                                        className="shadow" src={tech.image} alt={tech.name}   height="60px" />
+                                        className="shadow" 
+                                        src={tech.image} 
+                                        alt={tech.name} 
+                                    />
                                 </Row>
                                 
                                 <Row>
-                                    <p style={{marginBottom: "0px",}}>{tech.name}</p>
+                                    <p style={{ marginBottom: "0px" }}>{tech.name}</p>
                                 </Row>
                             </Col>
                         ))}
