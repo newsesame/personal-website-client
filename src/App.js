@@ -6,10 +6,10 @@ import {Routes, Route} from "react-router-dom";
 import Header from "./components/layout/Header";
 import { HelmetProvider } from 'react-helmet-async';
 
-import Root from './page/Root';
+import Home from './pages/Home';
 import Test from './page/Test';
 import Songs from "./page/Songs";
-import Career from "./components/Career";
+import Career from "./pages/Career";
 
 import { Col, Row } from 'react-bootstrap';
 
@@ -33,7 +33,7 @@ function App() {
 
 		{/* Routing */}
 		<Routes >
-		<Route path = "/" element={<Root/>}/>
+		<Route path = "/" element={<Home/>}/>
 		<Route path = "/test" element={<Test/>}/>
 		<Route path = "/songs" element={<Songs/>}/>
 		<Route path = "/career" element={<Career/>}/>

@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 const Career = () => {
-
-    useEffect(() => {
-		document.title = "Career — Josh Chau"
-	}, []);
+    useDocumentTitle("Career — Josh Chau");
 
 
     return (

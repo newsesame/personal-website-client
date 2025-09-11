@@ -1,38 +1,15 @@
 import React from 'react';
-import axios from 'axios';
-
-
 import {Col, Row} from "react-bootstrap";
-import { useEffect, useState } from 'react';
-
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import { useApi } from '../hooks/useApi';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
-
-// import Education from '../page/Education';
-const Root = () => {
-
-    useEffect(() => {
-		document.title = "Playlist — Josh Chau"
-	}, []);
-    // Get the song data
-    const [songs, setSongs] = useState([]);
+const Songs = () => {
+    useDocumentTitle("Playlist — Josh Chau");
+    
     const apiUrl = process.env.REACT_APP_WEBSERVER_API_ROOT;
-    console.log(apiUrl);
-    useEffect(() => {
-      const fetchSongs = async () => {
-        try {
-            const response = await axios.get(apiUrl+ "/songs");
-            setSongs(response?.data?.song_records);
-        } catch (error) {
-            console.error('Error fetching songs:', error);
-        }
-      };
-  
-      fetchSongs();
-    }, [apiUrl]);
+    const { data: apiData, loading, error } = useApi(apiUrl ? `${apiUrl}/songs` : null);
+    const songs = apiData?.song_records || [];
 
     console.log(songs);
 
@@ -142,4 +119,4 @@ const Root = () => {
     
 }
 
-export default Root
+export default Songs
