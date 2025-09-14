@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Test from './page/Test';
 import Songs from "./page/Songs";
 import Career from "./pages/Career";
+import Playlist from "./pages/Playlist";
 
 import { Col, Row } from 'react-bootstrap';
 
@@ -35,8 +36,9 @@ function App() {
 		<Routes >
 		<Route path = "/" element={<Home/>}/>
 		<Route path = "/test" element={<Test/>}/>
-		<Route path = "/songs" element={<Songs/>}/>
+		{/* <Route path = "/songs" element={<Songs/>}/> */}
 		<Route path = "/career" element={<Career/>}/>
+		<Route path = "/playlist" element={<Playlist/>}/>
 		 
 			{/* <Route path = "/contacts" element={<Contacts/>}/> */}
 

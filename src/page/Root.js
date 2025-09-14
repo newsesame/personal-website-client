@@ -191,7 +191,7 @@ const Root = () => {
                         key={index}                            
                         style={{ 
                         backgroundColor: categoryColors[category],
-                        borderRadius: "15px", // 圓角效果,
+                        borderRadius: "15px",
                         marginBottom: "10px",
                         padding: "15px"
                         }}>
