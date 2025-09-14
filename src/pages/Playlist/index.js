@@ -8,6 +8,7 @@ const Playlist = () => {
     useDocumentTitle("Playlist — Josh Chau");
     
     const apiUrl = process.env.REACT_APP_WEBSERVER_API_ROOT || '';
+    console.log('API URL from env:', apiUrl);
     
     const playlistIds = useMemo(() => ({
         "2025-08": "047wk2XFLEh67mxqraEBPI",

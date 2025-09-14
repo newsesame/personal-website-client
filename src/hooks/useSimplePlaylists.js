@@ -26,21 +26,28 @@ export const useSimplePlaylists = (playlistIds, apiUrl) => {
 
         const requests = Object.entries(playlistIds).map(async ([yearMonth, playlistId]) => {
           const requestUrl = `${apiUrl}/api/v1/spotify/playlists/${playlistId}/separated`;
+          console.log('Making request to:', requestUrl);
 
           const response = await fetch(requestUrl, {
             method: 'GET',
             headers: {
-              'Accept': 'application/json'
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
             },
             mode: 'cors'
           });
 
+          console.log('Response status:', response.status);
+          console.log('Response headers:', response.headers);
+
           if (!response.ok) {
             const errorText = await response.text();
+            console.error('Error response:', errorText);
             throw new Error(`HTTP ${response.status}: ${errorText}`);
           }
 
           const data = await response.json();
+          console.log('Successfully fetched data for', yearMonth, ':', data);
           return { yearMonth, data };
         });
 
