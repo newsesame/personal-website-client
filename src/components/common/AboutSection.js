@@ -13,7 +13,7 @@ const AboutSection = () => {
       <div className="items" style={{ flex: '3 1' }}>
         <h2>About Me</h2>
         <p>
-          Hello. I am a Year 3 Computer Science student at the Chinese University of Hong Kong, with a minor in Statistics. Currently, I'm pursuing my minor in statistics and 
+          Hello. I am a final-year Computer Science student at the Chinese University of Hong Kong, with a minor in Statistics. Currently, I'm pursuing my minor in statistics and 
           working on various software development projects.
         </p>
         <Col className='no-padding'>

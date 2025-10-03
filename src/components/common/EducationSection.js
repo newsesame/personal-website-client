@@ -15,7 +15,7 @@ const EducationSection = () => {
         </div>
 
         <div style={{ flex: '5 1', paddingLeft: "40px" }}>
-          <h3>B.Sc. in Computer Science <br></br>Minor in Statistics</h3>
+          <h3>B.Sc. in Computer Science, <br></br>Minor in Statistics</h3>
           <p>The Chinese University of Hong Kong<br></br>Sept 2022 to Present</p>
         </div>
       </div>
